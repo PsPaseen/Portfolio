@@ -15,18 +15,23 @@ export const CardProject = (props : CardProjectProps) => {
     const { imageURL, name, info, link, large = false} = props
 
     const isMobile = useMediaQuery('(max-width:768px)');
+    const isTablet = useMediaQuery('(min-width:768px) and (max-width:1180px)');
 
     const CardWidth = useMemo(() => {
-        if(large && isMobile){
+        if(large && isTablet){ //isTablet
+            return "750px"
+        }else if(!large && isTablet){
             return "350px"
-        }else if(large && !isMobile){
-            return "1232px"
+        }else if(large && isMobile){ //isMobile
+            return "350px"
         }else if(!large && isMobile){
             return "350px"
+        }else if(large && !isMobile){ // desktop
+            return "1232px"
         }else{
             return "400px"
         }
-    },[large, isMobile])
+    },[large, isMobile,isTablet])
 
     const imgHeight = useMemo(() => {
         if(large && isMobile){

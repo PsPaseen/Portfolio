@@ -31,7 +31,8 @@ import { useCallback } from "react";
 export const LandingPage = () => {
 
     const isMobile = useMediaQuery('(max-width:768px)');
-
+    const isTablet = useMediaQuery('(min-width:768px) and (max-width:1180px)');
+    const isTabletLandscape = useMediaQuery('(min-width:768px) and (max-width:1180px) and (orientation: landscape)');
 
     const onClickGit = useCallback(() => {
             window.location.href = 'https://github.com/PsPaseen'
@@ -40,7 +41,7 @@ export const LandingPage = () => {
     return (
     <>
        <Topbar />
-            <Box sx={{ display: 'flex', flexDirection: 'column', height: isMobile? '50px':'200px', textAlign: 'center', justifyContent: 'center', background: 'linear-gradient(to bottom, #292a33 0%, #373a5c 100%)' }} />
+            <Box sx={{ display: 'flex', flexDirection: 'column', height: isTabletLandscape? '100px': isTablet ? '100px' : isMobile ? '50px': '200px' , textAlign: 'center', justifyContent: 'center', background: 'linear-gradient(to bottom, #292a33 0%, #373a5c 100%)' }} />
 
             <Box sx={{
                 display: 'flex',
@@ -57,16 +58,16 @@ export const LandingPage = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}>
 
-                    <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '834px' }}>
-                        <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column ':'row', gap: isMobile ? 0 : 2, justifyContent: isMobile ? 'center' : 'flex-start' }}>
-                            <Typography fontFamily={'Mitr'} fontWeight={'400'} variant="h4" color="white">สวัสดีครับ! ผมชื่อ</Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '834px', pl: isTablet? 2 : 0}}>
+                        <Box sx={{ display: 'flex', flexDirection: isTablet? 'row': isMobile ? 'column ':'row', gap: isTablet? 1 : isMobile ? 0 : 2, justifyContent: isMobile ? 'center' : 'flex-start' }}>
+                            <Typography fontFamily={'Mitr'} fontWeight={'400'} fontSize={isTablet? "30px": "40px"} color="white">สวัสดีครับ! ผมชื่อ</Typography>
                             <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.02 }}>
-                                <Typography fontFamily={'Mitr'} fontWeight={'500'} variant="h4" color="white">Paseen</Typography>
+                                <Typography fontFamily={'Mitr'} fontWeight={'500'} fontSize={isTablet? "30px": "40px"} color="white">Paseen</Typography>
                             </motion.div>
                         </Box>
                         <motion.div initial={{ opacity: 0, scale: 0.3 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.5, ease: [0, 0.71, 0.2, 1.01], type: 'spring' }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                                <Typography fontFamily={'Mitr'} fontWeight={'200'} variant="body1" color="white">
+                                <Typography fontFamily={'Mitr'} fontWeight={'200'} variant={isTablet? "h6": isMobile? "body1": "h6"} color="white">
                                     เรียนจบจากมหาวิทยาลัยธรรมศาสตร์รังสิต คณะวิทยาศาสตร์และเทคโนโลยี สาขาวิทยาการคอมพิวเตอร์ด้วย
                                     <span style={{ fontWeight: '300' }}>เกียรตินิยมอันดับ2🥈 </span>
                                     มีความสามารถในการออกแบบพัฒนาเว็บไซต์ด้วยเทคโนโลยีที่ทันสมัย💡 และพร้อมท้าทายเรียนรู้สิ่งใหม่ๆอยู่เสมอ!🔥
@@ -95,15 +96,17 @@ export const LandingPage = () => {
 
                 <motion.div initial={{ opacity: 0, scale: 0.3 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}>
                     <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.02 }}>
-                        <Avatar variant="rounded" sx={{ height: isMobile ? '300px' : '400px', width: isMobile ? '300px' : '400px', boxShadow: '0px 0px 4px #fff' }} src={Paseen} />
+                        <div style={{paddingRight: isTablet? '12px' : 0}}>
+                        <Avatar variant="rounded" sx={{ height: isTablet? '350px' : isMobile ? '300px' : '400px', width: isTablet? '350px' : isMobile ? '300px' : '400px', boxShadow: '0px 0px 4px #fff'}} src={Paseen} />
+                        </div>
                     </motion.div>
                 </motion.div>
             </Box>
 
-        <Box sx={{display:'flex', flexDirection:'column' , height:'200px', textAlign:'center', justifyContent:'center' , background: 'linear-gradient(to bottom, #373a5c 0%, #292a33 100%)'}}/>
+        <Box sx={{display:'flex', flexDirection:'column' , height: '200px', textAlign:'center', justifyContent:'center' , background: 'linear-gradient(to bottom, #373a5c 0%, #292a33 100%)'}}/>
              <Box sx={{ display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
-                height: isMobile ? 'auto' : '600px',
+                height: isTablet? '1200px' : isMobile ? 'auto' : '600px',
                 backgroundColor: '#292A33',
                 gap: 6,
                 p: isMobile ? 3 : 0, textAlign:'center'}}>
@@ -123,7 +126,7 @@ export const LandingPage = () => {
                                 },
                             },}}>
                     <Typography fontFamily={'Mitr'} fontWeight={'500'} variant="h2" color="white">Skill ทักษะความสามารถ</Typography>
-                    <Box sx={{display:'flex',flexDirection: isMobile? 'column':'row',flexWrap:'wrap',justifyContent:'center',paddingTop:8}}>
+                    <Box sx={{display:'flex',flexDirection: 'row',flexWrap:'wrap',justifyContent:'center',paddingTop:8}}>
                         <CardSkill info="มีความสามารถในการพัฒนาและออกแบบเว็บไซต์ด้วยภาษา React, JavaScript, TypeScript และใช้ UI Component MUI" name="Front-End" image={imageFront}/>
                         <CardSkill info="สามารถพัฒนาระบบหลังบ้านด้วย NodeJs และออกแบบฐานข้อมูลด้วย MySQL หรือ SQL Server" name="Back-End" image={imageBack}/>
                         <CardSkill info="สามารถใช้งานเครื่องมือต่างๆได้ ไม่ว่าจะเป็น Git, Gitlab, Miro และ Jira เป็นต้น" name="Tool" image={imageTool}/>
@@ -132,8 +135,8 @@ export const LandingPage = () => {
                     </Box>
                 </motion.div>
              </Box>
-        <Box sx={{display:'flex', flexDirection:'column' , height:'250px', textAlign:'center', justifyContent:'center' , background: 'linear-gradient(to bottom, #292a33 0%, #373a5c 100%)'}}/>
-            <Box sx={{display:'flex', flexDirection:'column' , height: isMobile? 'auto':'900px', backgroundColor: '#373A5C' , textAlign:'center', justifyContent:'center'}}>
+        <Box sx={{display:'flex', flexDirection:'column' , height:'250px' , background: 'linear-gradient(to bottom, #292a33 0%, #373a5c 100%)'}}/>
+            <Box sx={{display:'flex', flexDirection:'column' , minHeight: isTablet? '600px' : isMobile? 'auto':'800px', backgroundColor: '#373A5C' , textAlign:'center', justifyContent:'center'}}>
                 <motion.div  
                                 initial="offscreen"
                                 whileInView="onscreen"
@@ -183,22 +186,22 @@ export const LandingPage = () => {
                     <Typography fontFamily={'Mitr'} fontWeight={'400'} variant="h4" color="white">ติดต่อ</Typography>
                 </Box>
 
-                <Box sx={{display:'flex', flexDirection:'column', pt:6 , textAlign:'center',pl:8,gap:3 }}>        
+                <Box sx={{display:'flex', flexDirection:'column', pt:6 , textAlign:'center',pl: isMobile ? 2 : 8,gap:3 }}>        
                     <Box sx={{display:'flex', flexDirection:'row', gap:1}}>
                         <LocalPhoneIcon sx={{height:'30px',width:'30px'}}/>
                         <Typography sx={{width:'80px'}} fontFamily={'Mitr'} fontWeight={'400'} variant="h6" color="white">Tel</Typography>
-                        <Typography sx={{pl: isMobile? 1 : 6}} fontFamily={'Mitr'} fontWeight={'500'} variant="h6" color="white">083-311-9223</Typography>
+                        <Typography sx={{pl: isMobile? 0 : 6}} fontFamily={'Mitr'} fontWeight={'500'} variant="h6" color="white">083-311-9223</Typography>
 
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'row', gap:1}}>
                         <EmailIcon sx={{height:'30px',width:'30px'}}/>
                         <Typography sx={{width:'80px'}} fontFamily={'Mitr'} fontWeight={'400'} variant="h6" color="white">Email</Typography>
-                        <Typography sx={{pl: isMobile? 1 : 6}} fontFamily={'Mitr'} fontWeight={'500'} variant={isMobile? "body1": "h6"} color="white">paseen.san@gmail.com</Typography>
+                        <Typography sx={{pl: isMobile? 0 : 6}} fontFamily={'Mitr'} fontWeight={'500'} variant={isMobile? "body1": "h6"} color="white">paseen.san@gmail.com</Typography>
                     </Box>
                     <Box onClick={onClickGit} sx={{display:'flex', flexDirection:'row', gap:1,cursor:'pointer'}}>
                         <img  style={{height: '30px',width:'30px'}} src={imageGit}/>
                         <Typography sx={{width:'80px'}} fontFamily={'Mitr'} fontWeight={'400'} variant="h6" color="white">Github</Typography>
-                        <Typography sx={{pl: isMobile? 1 : 6}} fontFamily={'Mitr'} fontWeight={'500'} variant="h6" color="white">PsPaseen</Typography>
+                        <Typography sx={{pl: isMobile? 0 : 6}} fontFamily={'Mitr'} fontWeight={'500'} variant="h6" color="white">PsPaseen</Typography>
                     </Box>
                 </Box>
             </motion.div>

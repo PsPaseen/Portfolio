@@ -25,7 +25,7 @@ export const CardSkill = (props : CardProps) => {
           }}
         viewport={{ amount: 0.8 }}>
             
-            <div style={{height: isMobile ? 'auto' : '200px' ,width: isMobile? '100px' : '520px',borderRadius: 2 }}>
+            <div style={{height: isMobile ? 'auto' : '200px' ,width: isMobile? '327px' : '520px',borderRadius: 2 }}>
                 <Box sx={{display:'flex', flexDirection: 'row', paddingLeft: 2, paddingTop: '15px' , gap: isMobile? 3:5}}>
                     {image ? <img style={{height:isMobile?'70px': '90px' , width:isMobile? '70px': '90px'}} src={image} /> : <Avatar variant="rounded" style={{height:'90px' , width: '90px'}}>TEST</Avatar> }
                     <Box sx={{display:'flex', flexDirection:'column',textAlign:'left' }}>
