@@ -130,7 +130,7 @@ export const LandingPage = () => {
                         <CardSkill info="มีความสามารถในการพัฒนาและออกแบบเว็บไซต์ด้วยภาษา React, JavaScript, TypeScript และใช้ UI Component MUI" name="Front-End" image={imageFront}/>
                         <CardSkill info="สามารถพัฒนาระบบหลังบ้านด้วย NodeJs และออกแบบฐานข้อมูลด้วย MySQL หรือ SQL Server" name="Back-End" image={imageBack}/>
                         <CardSkill info="สามารถใช้งานเครื่องมือต่างๆได้ ไม่ว่าจะเป็น Git, Gitlab, Miro และ Jira เป็นต้น" name="Tool" image={imageTool}/>
-                        <CardSkill info="ทักษะการอ่านและฟัง ภาษาอังกฤษมีผลการวัดระดับด้วย TOEIC โดยได้คะแนน 660 หรือในระดับ Intimidate ทั้งสองทักษะ" name="Language" image={imageChat}/>
+                        <CardSkill info="ทักษะการอ่านและฟัง ภาษาอังกฤษมีผลการวัดระดับด้วย TOEIC โดยได้คะแนน 660 หรือในระดับ Intermediate ทั้งสองทักษะ" name="Language" image={imageChat}/>
                         <CardSkill info="ความสามารถในการออกแบบงานโดยใช้ Photoshops หรือออกแบบโดยใช้ Canva" name="Design" image={imageDesign}/>
                     </Box>
                 </motion.div>
