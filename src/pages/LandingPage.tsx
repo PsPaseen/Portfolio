@@ -26,9 +26,10 @@ import EmailIcon from '@mui/icons-material/Email';
 
 import { CardSkill } from "../components/CardSkill";
 import { CardProject } from "../components/CardProject";
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 
 export const LandingPage = () => {
+    const ContactRef = useRef<HTMLDivElement>(null)
 
     const isMobile = useMediaQuery('(max-width:768px)');
     const isTablet = useMediaQuery('(min-width:768px) and (max-width:1180px)');
@@ -37,6 +38,12 @@ export const LandingPage = () => {
     const onClickGit = useCallback(() => {
             window.location.href = 'https://github.com/PsPaseen'
         },[])
+
+    const onClickScroll = useCallback(() => {
+        if(ContactRef.current){
+            ContactRef.current.scrollIntoView({ behavior: 'smooth' })
+        }
+    },[])
 
     return (
     <>
@@ -81,10 +88,10 @@ export const LandingPage = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, justifyContent: isMobile ? 'center' : 'flex-start' }}>
                                     <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.02 }}>
-                                        <Button variant="contained" sx={{ fontFamily: 'Mitr', width: '80px' }}>ติดต่อ</Button>
+                                        <Button onClick={onClickScroll} variant="contained" sx={{ fontFamily: 'Mitr', width: '80px' }}>ติดต่อ</Button>
                                     </motion.div>
                                     <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.02 }}>
-                                        <Button variant="text" color="inherit" sx={{ fontFamily: 'Mitr', height: '36.5px', width: '80px', fontSize: '12px', textTransform: 'none' }}>
+                                        <Button onClick={onClickGit} variant="text" color="inherit" sx={{ fontFamily: 'Mitr', height: '36.5px', width: '80px', fontSize: '12px', textTransform: 'none' }}>
                                             <img style={{ height: '20px', width: '20px', marginRight: 4 }} src={imageGit} />Github
                                         </Button>
                                     </motion.div>
@@ -165,7 +172,7 @@ export const LandingPage = () => {
                     </motion.div>
             </Box>
         <Box sx={{display:'flex', flexDirection:'column' , height:'100px', textAlign:'center', justifyContent:'center' , background: 'linear-gradient(to bottom, #373a5c 0%, #292a33 50%)'}}/>                    
-        <Box sx={{display:'flex', flexDirection:'column' , height:isMobile? '400px' : '400px', backgroundColor: '#292A33',alignItems:'center'}}>
+        <Box ref={ContactRef} sx={{display:'flex', flexDirection:'column' , height:isMobile? '400px' : '400px', backgroundColor: '#292A33',alignItems:'center'}}>
                 <motion.div  
                             initial="offscreen"
                             whileInView="onscreen"
