@@ -167,7 +167,7 @@ export const LandingPage = () => {
                                 <CardProject name="เกม Hangman" info="เป็นการ Fork Repository มาพัฒนาเกมให้มีความท้าทายและความสนุกมากยิ่งขึ้น และใช้หลักการพัฒนาด้วย Scrum Process มาวางแผนการพัฒนา" imageURL={imageGame} link="https://github.com/PUNNAz/CS266_Hangman"/>
                                 <CardProject name="CalorieTracker" info="ใช้งาน Android Studio ภาษา Java และ SQLite ในการพัฒนาแอปพลิเคชันเก็บข้อมูลสุขภาพของผู้ใช้ และนับจำนวนแคลลอรี่ในการกินอาหาร" imageURL={imageTracker} link="https://github.com/KittamadLim/CaloriesTracker"/>
                                 <CardProject name="Project Practical Training" info="เป็นการฝึกสร้างหน้าเว็ปไซต์ที่มีฟังก์ชันต่างๆ ไม่ว่าจะเป็นดึงข้อมูลหลังบ้านมาแสดงใน Table หรือรับไฟล์ Excel มาสรุปผลแล้วดาวน์โหลดไฟล์เป็นต้น" imageURL={imageMini} link="https://github.com/PsPaseen/mini_project02"/>
-                                <CardProject name="Project Portfolio" info="เป็นการฝึกสร้างหน้าเว็ปไซต์แสดงผลงานของตนเอง และสามารถนำไปใช้งานในการสมัครงานได้อีกด้วย!" imageURL={imagePort} link="test"/>
+                                <CardProject name="Project Portfolio" info="เป็นการฝึกสร้างหน้าเว็ปไซต์แสดงผลงานของตนเอง และสามารถนำไปใช้งานในการสมัครงานได้อีกด้วย!" imageURL={imagePort} link="https://github.com/PsPaseen/Portfolio"/>
                         </Box>
                     </motion.div>
             </Box>
