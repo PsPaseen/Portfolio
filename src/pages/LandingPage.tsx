@@ -19,6 +19,7 @@ import imagePort from '../assets/images/port.png'
 import imageSet from '../assets/images/set2.png'
 import imageTracker from '../assets/images/tracker.png'
 import imageMini from '../assets/images/mini.png'
+import imageMobile from '../assets/images/computer.png'
 
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -77,11 +78,12 @@ export const LandingPage = () => {
                                 <Typography fontFamily={'Mitr'} fontWeight={'200'} variant={isTablet? "h6": isMobile? "body1": "h6"} color="white">
                                     เรียนจบจากมหาวิทยาลัยธรรมศาสตร์รังสิต คณะวิทยาศาสตร์และเทคโนโลยี สาขาวิทยาการคอมพิวเตอร์ด้วย
                                     <span style={{ fontWeight: '300' }}>เกียรตินิยมอันดับ2🥈 </span>
-                                    มีความสามารถในการออกแบบพัฒนาเว็บไซต์ด้วยเทคโนโลยีที่ทันสมัย💡 และพร้อมท้าทายเรียนรู้สิ่งใหม่ๆอยู่เสมอ!🔥
+                                    ปัจจุบันทำงานตำแหน่ง <span style={{ fontWeight: '300' }}>Full Stack Developer</span> 💻 พัฒนาทั้งเว็บแอปพลิเคชัน ระบบหลังบ้าน และแอปมือถือ และพร้อมท้าทายเรียนรู้สิ่งใหม่ๆอยู่เสมอ!🔥
                                 </Typography>
                                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
                                     <Chip label="React" sx={{ backgroundColor: '#292a33', color: 'white' }} icon={<CodeIcon />} />
                                     <Chip label="TypeScript" sx={{ backgroundColor: '#292a33', color: 'white' }} icon={<CodeIcon />} />
+                                    <Chip label="Golang" sx={{ backgroundColor: '#292a33', color: 'white' }} icon={<ApiIcon />} />
                                     <Chip label="NodeJs" sx={{ backgroundColor: '#292a33', color: 'white' }} icon={<ApiIcon />} />
                                     <Chip label="SQL" sx={{ backgroundColor: '#292a33', color: 'white' }} icon={<StorageIcon />} />
                                     <Chip label="และอื่นๆ.." sx={{ backgroundColor: '#292a33', color: 'white' }} icon={<AddIcon />} />
@@ -113,7 +115,7 @@ export const LandingPage = () => {
         <Box sx={{display:'flex', flexDirection:'column' , height: '200px', textAlign:'center', justifyContent:'center' , background: 'linear-gradient(to bottom, #373a5c 0%, #292a33 100%)'}}/>
              <Box sx={{ display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
-                height: isTablet? '1200px' : isMobile ? 'auto' : '600px',
+                height: isTablet? '1400px' : isMobile ? 'auto' : '600px',
                 backgroundColor: '#292A33',
                 gap: 6,
                 p: isMobile ? 3 : 0, textAlign:'center'}}>
@@ -134,9 +136,10 @@ export const LandingPage = () => {
                             },}}>
                     <Typography fontFamily={'Mitr'} fontWeight={'500'} variant="h2" color="white">Skill ทักษะความสามารถ</Typography>
                     <Box sx={{display:'flex',flexDirection: 'row',flexWrap:'wrap',justifyContent:'center',paddingTop:8}}>
-                        <CardSkill info="มีความสามารถในการพัฒนาและออกแบบเว็บไซต์ด้วยภาษา React, JavaScript, TypeScript และใช้ UI Component MUI" name="Front-End" image={imageFront}/>
-                        <CardSkill info="สามารถพัฒนาระบบหลังบ้านด้วย NodeJs และออกแบบฐานข้อมูลด้วย MySQL หรือ SQL Server" name="Back-End" image={imageBack}/>
-                        <CardSkill info="สามารถใช้งานเครื่องมือต่างๆได้ ไม่ว่าจะเป็น Git, Gitlab, Miro และ Jira เป็นต้น" name="Tool" image={imageTool}/>
+                        <CardSkill info="พัฒนาและออกแบบเว็บไซต์ด้วย React, Next.js, Angular, TypeScript, JavaScript, HTML, CSS และ UI Component อย่าง MUI, Ant Design, Tamagui" name="Front-End" image={imageFront}/>
+                        <CardSkill info="พัฒนาระบบหลังบ้านด้วย Golang (Go Micro), Node.js และ Java ออกแบบฐานข้อมูลด้วย MySQL และ MsSQL" name="Back-End" image={imageBack}/>
+                        <CardSkill info="พัฒนาแอปพลิเคชันมือถือทั้ง Android และ iOS ด้วย Expo (React Native) และ Android Studio" name="Mobile" image={imageMobile}/>
+                        <CardSkill info="ใช้งานเครื่องมือต่างๆ ได้แก่ Git, GitLab, Docker, Postman, Jira และ Miro เป็นต้น" name="Tool" image={imageTool}/>
                         <CardSkill info="ทักษะการอ่านและฟัง ภาษาอังกฤษมีผลการวัดระดับด้วย TOEIC โดยได้คะแนน 660 หรือในระดับ Intermediate ทั้งสองทักษะ" name="Language" image={imageChat}/>
                         <CardSkill info="ความสามารถในการออกแบบงานโดยใช้ Photoshops หรือออกแบบโดยใช้ Canva" name="Design" image={imageDesign}/>
                     </Box>
@@ -162,6 +165,10 @@ export const LandingPage = () => {
                         <Typography fontFamily={'Mitr'} fontWeight={'500'} variant="h2" color="white">Experience and Project</Typography>
                         <Typography fontFamily={'Mitr'} fontWeight={'400'} variant="h4" color="white">ประสบการณ์และโปรเจค</Typography>
                         <Box sx={{display:'flex', flexDirection:'row',flexWrap:'wrap' ,gap:2, pt: 12 ,justifyContent:'center', alignItems:'center' }}>
+                                <CardProject large={true} name="Full Stack Developer (ปัจจุบัน)" info="ทำงานตำแหน่ง Full Stack Developer พัฒนาระบบ POS (Point of Sale) ระดับองค์กร ทั้งฝั่ง Front-End ด้วย React, Next.js, TypeScript และฝั่ง Back-End ด้วย Golang (Go Micro) รวมถึงพัฒนาแอปมือถือด้วย Expo (React Native) ทำงานร่วมกับทีมผ่าน GitLab, Jira และ Docker"/>
+                                <CardProject name="ระบบ POS (Point of Sale)" info="พัฒนาระบบ POS ระดับองค์กร ครอบคลุมทั้งเว็บแอปพลิเคชัน และแอปมือถือบน Android และ iOS ด้วย Expo (React Native)"/>
+                                <CardProject name="ระบบสมาชิก LINE LIFF" info="ออกแบบและพัฒนาระบบสมาชิกสำหรับลูกค้าของแต่ละร้านค้า โดยเชื่อมต่อกับ LINE LIFF ให้ลูกค้าสมัครและใช้งานสมาชิกผ่าน LINE ได้ทันที"/>
+                                <CardProject name="ระบบ CMS" info="พัฒนาระบบ CMS สำหรับจัดการเนื้อหาและข้อมูลของแต่ละร้านค้าผ่านระบบหลังบ้าน"/>
                                 <CardProject large={true} name="ฝึกงานสหกิจศึกษา บริษัทตลาดหลักทรัพย์แห่งประเทศไทย" info="ฝึกงานสหกิจศึกษาระยะเวลา 6 เดือน ตั้งแต่ กรกฏาคม 2567 ถึง ธันวาคม 2567 ได้รับหน้าที่เป็น Full-Stack Developer ได้รับมอบหมายโปรเจคพัฒนาและย้ายระบบ Back-Office จาก Angular เป็น Reactและใช้งานร่วมกับ UI Component MUI เพื่อให้การสร้างหน้าเว็บรวดเร็วเป็นไปในรูปแบบเดียวกัน ส่วนหลังบ้านมีการปรับปรุงและพัฒนาด้วยภาษา Java ให้มีการทำงานได้อย่างลื่นไหลไม่เกิดปัญหา" imageURL={imageSet}/>
                                 <CardProject name="กินไรดี Kinraidee" info="เป็นเว็ปแอปพลิเคชันที่สุ่มอาหารที่อยู่ในรายการมาให้ในกรณีที่คิดไม่ได้ว่าจะกินอะไรดี! ได้รับตำแหน่งเป็น Front-End ออกแบบและใช้ภาษา HTML,CSS และ PHP" imageURL={imageKin} link="https://github.com/PUNNAz/Kinraidee"/>
                                 <CardProject name="เกม Hangman" info="เป็นการ Fork Repository มาพัฒนาเกมให้มีความท้าทายและความสนุกมากยิ่งขึ้น และใช้หลักการพัฒนาด้วย Scrum Process มาวางแผนการพัฒนา" imageURL={imageGame} link="https://github.com/PUNNAz/CS266_Hangman"/>
